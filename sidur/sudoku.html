@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku!</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku!</h1>
+        <div id="gameBoard" class="board-grid">
+        </div>
+        <div class="dropdown">
+            <button id="newGameButton">Nýr Leikur</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="startNewGame('easy')">Auðvelt</a>
+                <a href="#" onclick="startNewGame('medium')">Miðlungs</a>
+                <a href="#" onclick="startNewGame('hard')">Erfitt</a>
+        </div>
+        <p id="statusMessage"></p>
+    </div>
+
+    <div id="errorCounter">Villur: 0 / 3</div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+</div>
+
+
+    <script src="../js/sudoku.js"></script>
+    <script>
+         function openModal(message) {
+            document.getElementById("modalMessage").textContent = message;
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function getDifficultyFromURL(){
+            const params = new URLSearchParams(window.location.search);
+            return params.get('difficulty') || 'easy';
+        }
+
+        window.onload = () => {
+            const difficulty = getDifficultyFromURL();
+            startNewGame(difficulty);
+        }
+    </script>
+    <footer>
+        <a href="../index.html">Til baka</a>
+    </footer>
+</body>
+</html>
