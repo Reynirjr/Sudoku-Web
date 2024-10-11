@@ -273,3 +273,35 @@ footer li{
         flex-wrap: wrap;
     }
 }
+@media(min-width: 1200px){
+    .intro{
+        background-color: #393838;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    .difficulty-pane{
+        background-color: rgb(202, 218, 232);
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        height: 400px;
+    }
+    .erfidleikaButtons{
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+    }
+    .erfidleikaButtons a{
+        text-decoration: none;
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 20px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        
+    }
+}
