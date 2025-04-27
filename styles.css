@@ -1,4 +1,3 @@
-
 h1{
     text-align: center;
     font-size: 3em;
@@ -133,11 +132,11 @@ footer li{
 
 
 .board-grid input:nth-child(3n+1) {
-    border-left: 3px solid black;            /* Thicker left border every 3rd column */
+    border-left: 3px solid black;           
 }
 
 .board-grid input:nth-child(3n) {
-    border-right: 3px solid black;           /* Thicker right border every 3rd column */
+    border-right: 3px solid black;           
 }
 
 .board-grid input:nth-child(-n+9) {
@@ -235,6 +234,30 @@ footer li{
     padding: 10px;
 }
 
+.board-grid input:disabled {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+.board-grid input:focus {
+    background-color: #e6f2ff;
+    outline: none;
+    box-shadow: none;
+}
+
+.board-grid input.correct:focus {
+    background-color: lightgreen;
+}
+
+.board-grid input.incorrect:focus {
+    background-color: pink;
+}
+
+.board-grid input.highlight:focus {
+    background-color: #99ccff; 
+}
+
 @media (max-width: 500px) {
     #gameBoard {
         width: 75%;
@@ -271,37 +294,5 @@ footer li{
     .erfidleikaButtons{
         flex-direction: column;
         flex-wrap: wrap;
-    }
-}
-@media(min-width: 1200px){
-    .intro{
-        background-color: #393838;
-        color: white;
-        padding: 20px;
-        text-align: center;
-    }
-    .difficulty-pane{
-        background-color: rgb(202, 218, 232);
-        display: flex;
-        justify-content: center;
-        padding: 40px;
-        height: 400px;
-    }
-    .erfidleikaButtons{
-        display: flex;
-        flex-direction: row;
-        padding: 40px;
-    }
-    .erfidleikaButtons a{
-        text-decoration: none;
-        color: white;
-        padding: 30px;
-        border-radius: 10px;
-        margin: 20px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        width: 120px;
-        
     }
 }

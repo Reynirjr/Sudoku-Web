@@ -74,7 +74,9 @@ function renderBoard() {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             let cell = document.createElement('input');
-            cell.type = 'text';
+            cell.type = 'tel'; 
+            cell.inputMode = 'numeric'; 
+            cell.pattern = '[1-9]'; 
             cell.maxLength = 1;
             cell.value = sudokuBoard[i][j] !== 0 ? sudokuBoard[i][j] : '';
             cell.disabled = sudokuBoard[i][j] !== 0; 
@@ -159,4 +161,4 @@ function checkVictory() {
 }
 
 
-window.onload = () => startNewGame('easy'); 
+window.onload = () => startNewGame('easy');
